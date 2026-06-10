@@ -1,18 +1,4 @@
-import SectionHeader from '../components/SectionHeader.jsx'
-import { site } from '../data/site.js'
-
+import SEO from '../components/SEO.jsx'
 export default function Support() {
-  return (
-    <div>
-      <SectionHeader eyebrow="Support" title="Support the work.">
-        If a tool, guide, or project here helped you think more clearly, save time, or build something better, you can support future work.
-      </SectionHeader>
-      <section className="grid feature-grid">
-        <a className="card linked-card" href={site.support.coffee}><h2>Buy Me a Coffee</h2><p>Small one-time support for useful writing and tools.</p></a>
-        <a className="card linked-card" href={site.support.kofi}><h2>Ko-fi</h2><p>Support experiments, prototypes, and public notes.</p></a>
-        <a className="card linked-card" href={site.support.stripe}><h2>Sponsor a tool</h2><p>Help fund a specific guide, calculator, or interactive lab experiment.</p></a>
-      </section>
-      <p className="muted">Replace these links in `.env` when your accounts are ready.</p>
-    </div>
-  )
+  return <section className="page shell"><SEO title="Support" /><p className="eyebrow">support</p><h1>Support the field notes and tools.</h1><p className="page-lede">If something here saves you money, time, or a Copilot-induced meltdown, support keeps the public work going.</p><div className="support-row"><a className="button primary" href="https://github.com/sponsors/RockyWearsAHat">GitHub Sponsors</a><a className="button" href="/hire">Hire me</a></div></section>
 }

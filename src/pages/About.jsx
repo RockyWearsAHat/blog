@@ -1,15 +1,5 @@
-import SectionHeader from '../components/SectionHeader.jsx'
-
+import SEO from '../components/SEO.jsx'
+import { site } from '../data/site.js'
 export default function About() {
-  return (
-    <div className="prose">
-      <SectionHeader eyebrow="About" title="Alex Waldmann">
-        Developer, builder, and systems thinker focused on software, AI-assisted tools, automation, and experiments that make complex things easier to understand.
-      </SectionHeader>
-      <p>This site is not a generic tech blog. It is a public engineering notebook: what I am building, what I am learning, what I think is broken, and what I am trying next.</p>
-      <p>The work here spans software projects, AI workflows, interactive tools, technical essays, creative coding, and experiments that may become products later.</p>
-      <h2>How I think about AI</h2>
-      <p>AI is useful when it sharpens thinking. It is dangerous when it replaces ownership. My interest is in using AI as leverage while keeping human judgment, system design, and debugging skill intact.</p>
-    </div>
-  )
+  return <section className="page shell"><SEO title="Manifesto" /><p className="eyebrow">manifesto</p><h1>Waldmann Labs is not actually a lab. It is a standard.</h1><p className="page-lede">Built by {site.owner} / @{site.handle}: a public notebook for AI coding, visual engineering, and human-led software craft.</p><div className="panel ink-panel"><h2>Operating rules</h2><p>Make it useful. Make it fast. Make it memorable. Keep the writing indexable. Keep the interface dangerous enough to feel alive.</p></div></section>
 }

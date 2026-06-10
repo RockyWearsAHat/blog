@@ -1,23 +1,5 @@
-import { Mail } from 'lucide-react'
-import SectionHeader from '../components/SectionHeader.jsx'
+import SEO from '../components/SEO.jsx'
 import { site } from '../data/site.js'
-
 export default function Hire() {
-  return (
-    <div>
-      <SectionHeader eyebrow="Hire Me" title="Software, automation, AI tooling, and technical prototypes.">
-        Good fits include internal tools, full-stack prototypes, AI workflow design, data parsing, automation, debugging, and project rescue.
-      </SectionHeader>
-      <section className="grid feature-grid">
-        <article className="card"><h2>AI workflow audit</h2><p>Map where AI helps, where it wastes money, and how to redesign prompts, context, and tooling.</p></article>
-        <article className="card"><h2>Prototype build</h2><p>Turn a rough product idea into a working Vite/React app, internal tool, calculator, or proof of concept.</p></article>
-        <article className="card"><h2>Automation</h2><p>Build workflows that parse, transform, clean, move, or summarize data reliably.</p></article>
-      </section>
-      <section className="cta-panel">
-        <h2>Start a conversation</h2>
-        <p>Send a short note with what you are building, what is broken, and what a successful outcome looks like.</p>
-        <a className="button primary" href={`mailto:${site.email}?subject=Project inquiry for Alex Waldmann`}><Mail size={18} /> Email me</a>
-      </section>
-    </div>
-  )
+  return <section className="page shell"><SEO title="Hire" description="Hire Alex Waldmann for sharp web interfaces, AI coding workflows, and automation systems." /><p className="eyebrow">hire</p><h1>Need an interface that does not feel like a template?</h1><p className="page-lede">I build polished, useful systems: web experiences, AI workflows, automation, and sharp technical content.</p><div className="panel"><h2>Best fit</h2><p>Interactive landing pages, AI workflow audits, internal tools, data automation, and developer-facing content that needs both credibility and taste.</p><a className="button primary" href={`mailto:${site.email}`}>Email {site.owner}</a></div></section>
 }

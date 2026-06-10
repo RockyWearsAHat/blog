@@ -1,36 +1,16 @@
 export const projects = [
   {
-    slug: 'ai-coding-cost-calculator',
-    title: 'AI Coding Cost Calculator',
-    status: 'Live prototype',
-    type: 'Interactive tool',
-    description:
-      'A practical estimator that helps developers understand when their AI coding workflow is becoming expensive, risky, or too agent-driven.',
-    stack: ['React', 'Vite', 'Cost modeling', 'UX'],
-    links: { demo: '/lab/ai-coding-cost-calculator', github: '#' }
+    slug: 'waldmann-labs-interface',
+    title: 'Waldmann Labs Interface',
+    summary: 'The site itself: a scroll-driven R3F comic-metal lab with SEO-readable content underneath the spectacle.',
+    stack: ['React', 'R3F', 'Three.js', 'GLSL', 'Vite'],
+    proof: 'Proof that the portfolio can be the artifact instead of a list of artifacts.',
   },
   {
-    slug: 'local-model-selector',
-    title: 'Local Model Selector',
-    status: 'In progress',
-    type: 'Developer utility',
-    description:
-      'A decision helper for choosing local coding models based on machine constraints, task type, and quality expectations.',
-    stack: ['React', 'Local AI', 'Decision trees'],
-    links: { demo: '/lab', github: '#' }
+    slug: 'ai-cost-reactor',
+    title: 'AI Coding Cost Reactor',
+    summary: 'A small calculator that turns vague AI usage anxiety into visible monthly cost risk.',
+    stack: ['React', 'UX writing', 'pricing logic'],
+    proof: 'Useful, linkable, and aligned with the field-note content strategy.',
   },
-  {
-    slug: 'shader-visual-experiments',
-    title: 'Shader Visual Experiments',
-    status: 'Exploratory',
-    type: 'Creative coding',
-    description:
-      'Visual experiments around zooming, precision, rendering loops, and interactive mathematical systems.',
-    stack: ['WebGL', 'Shaders', 'Math', 'UI'],
-    links: { demo: '/lab', github: '#' }
-  }
 ]
-
-export function getProject(slug) {
-  return projects.find((project) => project.slug === slug)
-}
