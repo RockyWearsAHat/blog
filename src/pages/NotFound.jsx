@@ -1,11 +1,5 @@
 import { Link } from 'react-router-dom'
-
+import SEO from '../components/SEO.jsx'
 export default function NotFound() {
-  return (
-    <div className="prose">
-      <h1>Page not found.</h1>
-      <p>This route does not exist yet.</p>
-      <Link className="button primary" to="/">Back home</Link>
-    </div>
-  )
+  return <section className="page shell"><SEO title="404" /><p className="eyebrow">404</p><h1>This panel got blasted out of the viewport.</h1><Link className="button primary" to="/">Return home</Link></section>
 }

@@ -1,88 +1,89 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, Braces, Cpu, FlaskConical, PenTool, Wrench } from 'lucide-react'
-import Card from '../components/Card.jsx'
+import SEO from '../components/SEO.jsx'
+import ArticleCard from '../components/ArticleCard.jsx'
 import AdSlot from '../components/AdSlot.jsx'
 import { posts } from '../data/posts.js'
-import { projects } from '../data/projects.js'
+import { site } from '../data/site.js'
 
 export default function Home() {
   return (
-    <div>
-      <section className="hero">
-        <p className="eyebrow">Personal engineering lab</p>
-        <h1>Alex Waldmann builds software, AI-assisted systems, and experimental tools.</h1>
-        <p className="hero-copy">
-          This site is a public workspace: projects, technical writing, build logs, experiments, and tools for people who want to understand complex systems more clearly.
-        </p>
-        <div className="hero-actions">
-          <Link className="button primary" to="/projects">View Projects <ArrowRight size={18} /></Link>
-          <Link className="button" to="/writing">Read Writing</Link>
-          <Link className="button ghost" to="/lab">Explore the Lab</Link>
+    <>
+      <SEO />
+      <section className="hero shell" aria-labelledby="hero-title">
+        <div className="hero-copy panel ink-panel">
+          <p className="eyebrow">R3F · shader ink · scroll impact frames</p>
+          <h1 id="hero-title">AI coding notes inside a chrome manga machine.</h1>
+          <p className="hero-lede">
+            Waldmann Labs is not a project list. It is the artifact: a black-and-white comic-metal interface for field notes, tools, and proof that taste still matters.
+          </p>
+          <div className="hero-actions">
+            <Link className="button primary" to="/writing">Read field notes</Link>
+            <Link className="button" to="/tools/ai-coding-cost-calculator">Open reactor</Link>
+            <a className="button ghost" href={site.repo}>View repo</a>
+          </div>
+        </div>
+        <aside className="hero-spec panel">
+          <span>visual brief</span>
+          <strong>donut/cube impact reel energy</strong>
+          <p>Speed-line tunnel. Inked central mesh. Pink glitch explosion. Scroll-scrubbed camera. SEO text stays real.</p>
+        </aside>
+      </section>
+
+      <section className="impact-scroll" aria-label="Scroll-driven visual chapters">
+        <article className="impact-card left">
+          <span className="chapter">01 / whiteout</span>
+          <h2>High contrast manga blast.</h2>
+          <p>Like the donut frames: white paper, violent black lines, central object getting sliced by speed.</p>
+        </article>
+        <article className="impact-card right pink">
+          <span className="chapter">02 / cube detonation</span>
+          <h2>Pink energy failure state.</h2>
+          <p>Grid floor, neon fragments, aggressive outlines, and the feeling that Blender just became a comic panel.</p>
+        </article>
+        <article className="impact-card left">
+          <span className="chapter">03 / tunnel punch</span>
+          <h2>The page moves like an impact frame.</h2>
+          <p>The scene is always slightly alive, but the big transformations are driven by scroll so navigation feels physical.</p>
+        </article>
+      </section>
+
+      <section className="shell split-section">
+        <div className="panel slash-card">
+          <p className="eyebrow">why this exists</p>
+          <h2>The site itself is the portfolio.</h2>
+          <p>
+            No beige cards. No generic template. This is a content site that still proves engineering, motion design, restraint, and the ability to ship something memorable.
+          </p>
+        </div>
+        <div className="stats-grid">
+          <div><strong>R3F</strong><span>Three.js scene</span></div>
+          <div><strong>GLSL</strong><span>ink shader</span></div>
+          <div><strong>SEO</strong><span>semantic pages</span></div>
+          <div><strong>0 fluff</strong><span>sharp content</span></div>
         </div>
       </section>
 
-      <section className="grid feature-grid">
-        <Card>
-          <Cpu className="icon" />
-          <h3>AI systems</h3>
-          <p>Practical workflows, cost-aware tooling, local-first experiments, and engineering judgment around AI-assisted development.</p>
-        </Card>
-        <Card>
-          <Braces className="icon" />
-          <h3>Software projects</h3>
-          <p>Web apps, developer utilities, automation workflows, data tools, and prototypes that turn ideas into usable systems.</p>
-        </Card>
-        <Card>
-          <FlaskConical className="icon" />
-          <h3>Waldmann Lab</h3>
-          <p>Small tools, experiments, calculators, prompts, visual systems, and unfinished ideas built in public.</p>
-        </Card>
-      </section>
-
-      <section className="split-section">
-        <div>
-          <p className="eyebrow">Featured writing</p>
-          <h2>Technical notes, build logs, and systems thinking.</h2>
+      <section className="shell content-grid" aria-labelledby="latest-title">
+        <div className="section-heading">
+          <p className="eyebrow">latest field notes</p>
+          <h2 id="latest-title">Readable, useful, searchable.</h2>
         </div>
-        <Link className="text-link" to="/writing">All writing <ArrowRight size={16} /></Link>
+        {posts.map((post) => <ArticleCard key={post.slug} post={post} />)}
       </section>
-      <div className="grid post-grid">
-        {posts.slice(0, 3).map((post) => (
-          <Link className="card linked-card" key={post.slug} to={`/writing/${post.slug}`}>
-            <span className="pill">{post.eyebrow}</span>
-            <h3>{post.title}</h3>
-            <p>{post.summary}</p>
-            <small>{post.minutes} min read</small>
-          </Link>
-        ))}
-      </div>
 
-      <AdSlot label="Small non-intrusive ad" slot="1111111111" />
-
-      <section className="split-section">
-        <div>
-          <p className="eyebrow">Featured projects</p>
-          <h2>Things being built, tested, and shipped.</h2>
+      <section className="shell reference-section">
+        <p className="eyebrow">reference treatment</p>
+        <h2>Built from the three reels you sent.</h2>
+        <div className="reference-grid">
+          {site.instagramReferences.map((ref) => (
+            <a key={ref.url} className="reference-card" href={ref.url} target="_blank" rel="noreferrer">
+              <strong>{ref.title}</strong>
+              <span>{ref.treatment}</span>
+            </a>
+          ))}
         </div>
-        <Link className="text-link" to="/projects">All projects <ArrowRight size={16} /></Link>
       </section>
-      <div className="grid project-grid">
-        {projects.slice(0, 3).map((project) => (
-          <Link className="card linked-card" key={project.slug} to={`/projects/${project.slug}`}>
-            <span className="pill">{project.type}</span>
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
-            <div className="tag-row">{project.stack.slice(0, 3).map((item) => <span key={item}>{item}</span>)}</div>
-          </Link>
-        ))}
-      </div>
-
-      <section className="cta-panel">
-        <PenTool className="icon" />
-        <h2>Need software, automation, AI tooling, or a technical prototype?</h2>
-        <p>I’m interested in projects where clear thinking, practical systems, and fast iteration matter.</p>
-        <Link className="button primary" to="/hire">Work with me <Wrench size={18} /></Link>
-      </section>
-    </div>
+      <div className="shell"><AdSlot /></div>
+    </>
   )
 }
